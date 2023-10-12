@@ -10,13 +10,7 @@
 
 <h3> mathematician × musician × human being</h3>
 
-<div id="scene-container" style="width: 800px; height: 600px;"></div>
-
-<hr>
-
 <img src="assets/imgs/homeimage.png" width="100%"/>
-
-
 
 <hr>
 
@@ -109,75 +103,6 @@ music of southeast asia, russian literature, philosophy of mathematics
   <hr>
   ...
 </details>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script>
-  const container = document.getElementById("scene-container");
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-  camera.position.set(0, 0, 5);
-
-  const renderer = new THREE.WebGLRenderer();
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  container.appendChild(renderer.domElement);
-
-  // Create the first torus
-  const torusGeometry1 = new THREE.TorusGeometry(1, 0.3, 64, 16);
-  const torusMaterial1 = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-  const torus1 = new THREE.Mesh(torusGeometry1, torusMaterial1);
-  scene.add(torus1);
-
-  // Create the second torus
-  const torusGeometry2 = new THREE.TorusGeometry(1, 0.3, 64, 16);
-  const torusMaterial2 = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-  const torus2 = new THREE.Mesh(torusGeometry2, torusMaterial2);
-  scene.add(torus2);
-
-  // Position the tori to be linked
-  torus1.position.set(-1.5, 0, 0);
-  torus2.position.set(1.5, 0, 0);
-
-  // Rotation angles
-  let rotationSpeed = 0.01;
-  let torus1Rotation = 0;
-  let torus2Rotation = 0;
-
-  const animate = () => {
-    requestAnimationFrame(animate);
-
-    // Rotate the tori using the WASD keys
-    if (keyState.W) torus1.rotation.x += rotationSpeed;
-    if (keyState.S) torus1.rotation.x -= rotationSpeed;
-    if (keyState.A) torus1.rotation.y += rotationSpeed;
-    if (keyState.D) torus1.rotation.y -= rotationSpeed;
-
-    // Rotate torus1 about the meridianal axis with the Q key
-    if (keyState.Q) torus1Rotation += rotationSpeed;
-    torus1.rotation.z = torus1Rotation;
-
-    // Rotate torus2 about the vertical axis with the E key
-    if (keyState.E) torus2Rotation += rotationSpeed;
-    torus2.rotation.y = torus2Rotation;
-
-    renderer.render(scene, camera);
-  };
-
-  // Track key presses for WASD and QE rotation
-  const keyState = { W: false, S: false, A: false, D: false, Q: false, E: false };
-  window.addEventListener("keydown", (event) => {
-    if (event.key in keyState) {
-      keyState[event.key] = true;
-    }
-  });
-  window.addEventListener("keyup", (event) => {
-    if (event.key in keyState) {
-      keyState[event.key] = false;
-    }
-  });
-
-  animate();
-</script>
-
 
 </body>
 </HTML>
