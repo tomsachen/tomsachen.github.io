@@ -4,7 +4,7 @@
 <TITLE> Thomas Sachen </TITLE>
 
 
-<h2> thomas sachen yo</h2>
+<h2> thomas sachen</h2>
 
 
 
@@ -112,9 +112,7 @@ music of southeast asia, russian literature, philosophy of mathematics
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-  // JavaScript code
   const container = document.getElementById("scene-container");
-
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
   camera.position.set(0, 0, 5);
@@ -123,39 +121,49 @@ music of southeast asia, russian literature, philosophy of mathematics
   renderer.setSize(container.clientWidth, container.clientHeight);
   container.appendChild(renderer.domElement);
 
-  // Create a torus
-  const torusGeometry = new THREE.TorusGeometry(1, 0.3, 128, 16);
-  const torusMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-  const torus = new THREE.Mesh(torusGeometry, torusMaterial);
-  scene.add(torus);
+  // Create the first torus
+  const torusGeometry1 = new THREE.TorusGeometry(1, 0.3, 64, 16);
+  const torusMaterial1 = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+  const torus1 = new THREE.Mesh(torusGeometry1, torusMaterial1);
+  scene.add(torus1);
 
-  // Create a 3D point cloud (replace this with your data)
-  const pointCloudGeometry = new THREE.BufferGeometry();
-  const vertices = [];
-  for (let i = 0; i < 1000; i++) {
-    vertices.push(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5);
-  }
-  pointCloudGeometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(vertices), 3));
-  const pointCloudMaterial = new THREE.PointsMaterial({ color: 0xff0000 });
-  const pointCloud = new THREE.Points(pointCloudGeometry, pointCloudMaterial);
-  scene.add(pointCloud);
+  // Create the second torus
+  const torusGeometry2 = new THREE.TorusGeometry(1, 0.3, 64, 16);
+  const torusMaterial2 = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+  const torus2 = new THREE.Mesh(torusGeometry2, torusMaterial2);
+  scene.add(torus2);
 
-  // Add lighting and camera controls here
+  // Position the tori to be linked
+  torus1.position.set(-1.5, 0, 0);
+  torus2.position.set(1.5, 0, 0);
+
+  // Rotation angles
+  let rotationSpeed = 0.01;
+  let torus1Rotation = 0;
+  let torus2Rotation = 0;
 
   const animate = () => {
     requestAnimationFrame(animate);
 
-    // Rotate the torus using the WASD keys
-    if (keyState.W) torus.rotation.x += 0.01;
-    if (keyState.S) torus.rotation.x -= 0.01;
-    if (keyState.A) torus.rotation.y += 0.01;
-    if (keyState.D) torus.rotation.y -= 0.01;
+    // Rotate the tori using the WASD keys
+    if (keyState.W) torus1.rotation.x += rotationSpeed;
+    if (keyState.S) torus1.rotation.x -= rotationSpeed;
+    if (keyState.A) torus1.rotation.y += rotationSpeed;
+    if (keyState.D) torus1.rotation.y -= rotationSpeed;
+
+    // Rotate torus1 about the meridianal axis with the Q key
+    if (keyState.Q) torus1Rotation += rotationSpeed;
+    torus1.rotation.z = torus1Rotation;
+
+    // Rotate torus2 about the vertical axis with the E key
+    if (keyState.E) torus2Rotation += rotationSpeed;
+    torus2.rotation.y = torus2Rotation;
 
     renderer.render(scene, camera);
   };
 
-  // Track key presses for WASD rotation
-  const keyState = { W: false, S: false, A: false, D: false };
+  // Track key presses for WASD and QE rotation
+  const keyState = { W: false, S: false, A: false, D: false, Q: false, E: false };
   window.addEventListener("keydown", (event) => {
     if (event.key in keyState) {
       keyState[event.key] = true;
