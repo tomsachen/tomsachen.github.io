@@ -8,9 +8,10 @@
 
 
 
-<h3> mathematician × musician × human being </h3>
+<h3> mathematician × musician × human being</h3>
 
-<iframe src="3dtorusknot.html" width="800" height="600"></iframe>
+
+<div id="scene-container"></div>
 
 <img src="assets/imgs/homeimage.png" width="100%"/>
 
@@ -108,44 +109,68 @@ music of southeast asia, russian literature, philosophy of mathematics
   ...
 </details>
 
+<!-- Below your existing content, but still inside the <body> tag -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// JavaScript code
+const container = document.getElementById("scene-container");
 
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+camera.position.set(0, 0, 5);
 
-</o1>
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(container.clientWidth, container.clientHeight);
+container.appendChild(renderer.domElement);
 
+// Create a torus
+const torusGeometry = new THREE.TorusGeometry(1, 0.3, 128, 16);
+const torusMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const torus = new THREE.Mesh(torusGeometry, torusMaterial);
+scene.add(torus);
 
+// Create a 3D point cloud (replace this with your data)
+const pointCloudGeometry = new THREE.Geometry();
+for (let i = 0; i < 1000; i++) {
+const vertex = new THREE.Vector3();
+vertex.x = Math.random() - 0.5;
+vertex.y = Math.random() - 0.5;
+vertex.z = Math.random() - 0.5;
+pointCloudGeometry.vertices.push(vertex);
+}
+const pointCloudMaterial = new THREE.PointsMaterial({ color: 0xff0000 });
+const pointCloud = new THREE.Points(pointCloudGeometry, pointCloudMaterial);
+scene.add(pointCloud);
 
+// Add lighting and camera controls here
 
+const animate = () => {
+requestAnimationFrame(animate);
 
+// Rotate the torus using the WASD keys
+if (keyState.W) torus.rotation.x += 0.01;
+if (keyState.S) torus.rotation.x -= 0.01;
+if (keyState.A) torus.rotation.y += 0.01;
+if (keyState.D) torus.rotation.y -= 0.01;
 
+renderer.render(scene, camera);
+};
 
+// Track key presses for WASD rotation
+const keyState = { W: false, S: false, A: false, D: false };
+window.addEventListener("keydown", (event) => {
+if (event.key in keyState) {
+    keyState[event.key] = true;
+}
+});
+window.addEventListener("keyup", (event) => {
+if (event.key in keyState) {
+    keyState[event.key] = false;
+}
+});
 
-
-
-
-
-
-</body>
-</HTML>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+animate();
+</script>
 
 
 </body>
