@@ -1,0 +1,19 @@
+canvas {
+    background-color: #000;
+}
+
+.canvas-container {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.canvas-container canvas {
+    margin: 10px;
+    max-width: 100%;
+}
+
+.slider-container {
+    margin: 10px;
+}

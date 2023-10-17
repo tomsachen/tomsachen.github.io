@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fractal forest</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class = "caption"><p>drag/scroll to pan/zoom</p></div>
+    <div class="controls">
+        depth: <input type="range" id="level" min="1" max="9" value="5">
+        angle: <input type="range" id="angle" min="0" max="90" value="15", step ="5">
+        scaling: <input type="range" id="scaling" min="0.3" max="0.9" step="0.01" value="0.67">
+        shift: <input type="range" id="shiftSlider" min="-1" max="1" step="0.01" value="-1">
+        <label for="shiftCheckbox">enable shearing</label>
+        <input type="checkbox" id="shiftCheckbox">
+        <label for="wiggleCheckbox">enable wiggle</label>
+        <input type="checkbox" id="wiggleCheckbox" disabled>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

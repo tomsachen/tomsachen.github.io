@@ -1,0 +1,27 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #f5f3e7; /* Muted background color */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.controls {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+
+}
+
+.caption {
+    position: fixed;
+    bottom: 35px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
