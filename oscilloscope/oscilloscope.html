@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>toroscillator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body style="font-family: Helvetica, Arial">
+<body style="font-family: 'Roboto', Helvetica, sans-serif;">
     <div class="canvas-container">
         <canvas id="torusCanvas" width="550" height="550"></canvas>
         <canvas id="oscilloscope" width="550" height="550"></canvas>
-        <p> use this tool to modulate the parameters of a 3D torus knot with an audible spectrum sound wave.<br><br>eventually, this will function as an external software oscilloscope for physical instruments, and will include support for polyphonic voices. it will also act more capably as a stand-alone visual FM synthesizer.</p>
+        <p> use this tool to modulate the parameters of a 3D torus knot with an audible spectrum sound wave.<br><br>eventually, this will function as an external software oscilloscope for physical instruments, and will naturally handle (up to 4) polyphonic voices in a more compelling and useful way than current oscilloscopes. <br><br> it will also act as a stand-alone visual FM synthesizer.</p>
     </div>
 
     <div class="slider-container">
@@ -63,7 +66,7 @@
 
     <div><p><hr><em>WASD = rotate // Enter = reset rotation // Space = pause modulation // M = play modulation signal</em></p>
 
-        <p><em>a = outer radius, b = inner radius, p = long. winding, q = merid. winding</em></p>
+        <p><em>a = outer radius, b = inner radius, p = longitudinal winding, q = meridianal winding</em></p>
     </div>
 
     <div style="position: absolute; bottom: 0; right: 0; width: 500px; text-align:right;font-family:Helvetica, Arial, sans-serif;font-size: 70px;font-weight:bold;">
