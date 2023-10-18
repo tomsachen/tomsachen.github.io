@@ -11,7 +11,7 @@
     <div class="canvas-container">
         <canvas id="torusCanvas" width="550" height="550"></canvas>
         <canvas id="oscilloscope" width="550" height="550"></canvas>
-        <p> use this tool to modulate the parameters of a 3D torus knot with an audible spectrum sound wave.<br><br>eventually, this will function as an external software oscilloscope for physical instruments, and will naturally handle (up to 4) polyphonic voices in a more compelling and useful way than current oscilloscopes. <br><br> it will also act as a stand-alone visual FM synthesizer, using evolving toric geometry to determine frequency directly.</p>
+        <p> use this tool to modulate the parameters of a 3D torus knot with an audible spectrum sound wave -- it is a non-euclidean oscilloscope.<br><br>eventually, this will function as an oscilloscope for external instruments, and will naturally handle (up to 4) polyphonic voices in a more compelling and useful way than current oscilloscopes. <br><br> it will also act as a stand-alone visual FM synthesizer, using evolving toric geometry to organically determine frequency.<br><br>the natural "mode of evolution" in the category of sound waves is oscillation; for topological spaces it is deformation. this is an early step to finding meaningful, functorial methods to compare these modes of change.</p>
     </div>
 
     <div class="slider-container">
@@ -42,7 +42,7 @@
 
     <div class="slider-container">
         <label for="frequency-slider">Frequency:</label>
-        <input type="range" id="frequency-slider" min="20" max="1000" step="1" value="440">
+        <input type="range" id="frequency-slider" min="20" max="1050" step="1" value="440">
         <input type="text" id="frequency-input" step="1" value="440">
 
         <label for="amplitude-slider">Amplitude:</label>
@@ -65,11 +65,11 @@
     </div>
     <hr>
 
-    <div><p><em><strong>arrow keys</strong> = <em>rotate</em> // <strong>Enter</strong> = <em>reset rotation</em> // <strong>Space</strong> = <em>play/pause modulation</em> <br><br> <em>use the first 2 keyboard rows</em> <strong>(q-i --> a-k)</strong> <em>to play the oscillator in harmonic tuning, or </em> <strong> m </strong>
-      <em>  to play a selected frequency. </em> </p>
+    <div><p><em><strong>arrow keys</strong> = <em>rotate</em> // <strong>Enter</strong> = <em>reset rotation</em> // <strong>Space</strong> = <em>play/pause animation</em> <br><br> <em>use the first 2 keyboard rows</em> <strong>(q-i --> a-k)</strong> <em>to play the oscillator in harmonic tuning, or </em><strong>m</strong>
+      <em>to play a selected frequency.</em> </p>
     </div>
 
-    <div style="position: absolute; bottom: 0; right: 0; width: 500px; text-align:right;font-family:Helvetica, Arial, sans-serif;font-size: 70px;font-weight:bold;">
+    <div style="position: absolute; bottom: 0; right: 0; width: 500px; text-align:right;font-family:Helvetica, Arial, sans-serif;font-size: 70px;font-weight:bold;font-style: normal;">
   toroscillator_
 </div>
 
