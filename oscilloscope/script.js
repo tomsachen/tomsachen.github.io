@@ -17,6 +17,7 @@ const triangleWaveformCheckbox = document.getElementById('triangle-waveform');
       document.getElementById('q-checkbox')
     ];
 
+
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const frequencySlider = document.getElementById('frequency-slider');
 
@@ -50,7 +51,7 @@ document.getElementById('amplitude-input').value = amplitude;
     let p = 3;
     let q = 7;
     const thetaMax = 2 * Math.PI;
-    const numPoints = 1000;
+    const numPoints = 1050;
     const thetaValues = Array.from({ length: numPoints }, (_, i) => (thetaMax * i) / numPoints);
 
     let angleX = 0.0;
@@ -66,14 +67,12 @@ document.getElementById('amplitude-input').value = amplitude;
     const bCheckbox = document.getElementById('b-checkbox');
     const pCheckbox = document.getElementById('p-checkbox');
     const qCheckbox = document.getElementById('q-checkbox');
+    let savedCheckboxStates = null;
 
     const baseA = 2;
     const baseB = 1;
     const baseP = 3;
     const baseQ = 7;
-
-    ctx.font = '30px Arial';
-    ctx.fillStyle = 'white';
 
     function computeTorusKnot(a, b, p, q, theta) {
         const x = (a + b * Math.cos(q * theta)) * Math.cos(p * theta);
@@ -142,41 +141,123 @@ document.getElementById('amplitude-input').value = amplitude;
 }
 }
 
-    window.addEventListener('keydown', (event) => {
-        switch (event.key) {
-            case 'a':
-                angleY += rotationSpeed;
-                break;
-            case 'd':
-                angleY -= rotationSpeed;
-                break;
-            case 'w':
-                angleX += rotationSpeed;
-                break;
-            case 's':
-                angleX -= rotationSpeed;
-                break;
-            case 'Enter':
-                angleX = 0;
-                angleY = 0;
-                break;
-                case ' ':
-                    event.preventDefault(); // Prevent the default scrolling behavior of spacebar
-                    const anyChecked = checkboxes.some(checkbox => checkbox.checked);
-                    if (anyChecked) {
-                        checkboxes.forEach(checkbox => checkbox.checked = false);
-                    }
-                    break;
-        }
-    });
-
-
-// Add keydown event listener to the document to play audio on pressing the "m" key
-document.addEventListener('keydown', (event) => {
-if(event.key === 'm'){
-    playAudio();
-}
+window.addEventListener('keydown', (event) => {
+    switch (event.key) {
+        case 'ArrowLeft':
+            angleY += rotationSpeed;
+            break;
+        case 'ArrowRight':
+            angleY -= rotationSpeed;
+            break;
+        case 'ArrowUp':
+            angleX += rotationSpeed;
+            break;
+        case 'ArrowDown':
+            angleX -= rotationSpeed;
+            break;
+        case 'Enter':
+            angleX = 0;
+            angleY = 0;
+            break;
+        case ' ':
+            event.preventDefault(); // Prevent the default scrolling behavior of spacebar
+            const anyChecked = checkboxes.some(checkbox => checkbox.checked);
+            if (anyChecked) {
+                // If any checkboxes are checked, save their states and uncheck them
+                savedCheckboxStates = checkboxes.map(checkbox => checkbox.checked);
+                checkboxes.forEach(checkbox => checkbox.checked = false);
+            } else if (savedCheckboxStates) {
+                // If there were saved states, restore them
+                checkboxes.forEach((checkbox, index) => checkbox.checked = savedCheckboxStates[index]);
+                savedCheckboxStates = null; // Clear saved states
+            }
+            break;
+        case 'm':
+        playAudio();
+        break;
+        case 'q':
+            frequencySlider.value = 65.41; // beginning of harmonic series
+            playAudio(); // To update sound immediately after changing frequency
+            frequencyInput.value = frequencySlider.value; // Update displayed frequency value
+            break;
+        case 'w':
+            frequencySlider.value = 130.81;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 'e':
+            frequencySlider.value = 196.00;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 'r':
+            frequencySlider.value = 261.63;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 't':
+            frequencySlider.value = 329.63;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 'y':
+            frequencySlider.value = 392;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 'u':
+            frequencySlider.value = 466.16;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 'i':
+            frequencySlider.value = 523.25;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 'a':
+            frequencySlider.value = 587.33;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 's':
+            frequencySlider.value = 659.26;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 'd':
+            frequencySlider.value = 739.99;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 'f':
+            frequencySlider.value = 783.99;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 'g':
+            frequencySlider.value = 830.61;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 'h':
+            frequencySlider.value = 932.33;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 'j':
+            frequencySlider.value = 987.77;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+        case 'k':
+            frequencySlider.value = 1046.50;
+            playAudio();
+            frequencyInput.value = frequencySlider.value;
+            break;
+    }
 });
+
 
 // Add event listeners to the text input fields to update the global variables on change
 
@@ -202,39 +283,54 @@ const amplitudeInput = document.getElementById('amplitude-input');
 
 let audioSource = null;
 
-// Function to play audio based on frequency and amplitude
 function playAudio() {
-   if (audioSource) {
-       audioSource.stop();
-   }
+    if (audioSource) {
+        // Introduce a short release time for the currently playing sound
+        audioSource.gainNode.gain.setValueAtTime(audioSource.gainNode.gain.value, audioContext.currentTime);
+        audioSource.gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.1); // 100ms release
+        audioSource.oscillator.stop(audioContext.currentTime + 0.1);
+    }
 
-   const frequency = parseFloat(frequencySlider.value);
-   const amplitude = parseFloat(amplitudeSlider.value);
+    const frequency = parseFloat(frequencySlider.value);
+    const amplitude = parseFloat(amplitudeSlider.value);
 
-   const oscillator = audioContext.createOscillator();
-   oscillator.type = 'sine'; // Default to sine wave
-   if (document.getElementById('sawtooth-waveform').checked) {
-       oscillator.type = 'sawtooth';
-   } else if (document.getElementById('triangle-waveform').checked) {
-       oscillator.type = 'triangle';
-   }
+    const oscillator = audioContext.createOscillator();
+    oscillator.type = 'sine'; // Default to sine wave
+    if (document.getElementById('sawtooth-waveform').checked) {
+        oscillator.type = 'sawtooth';
+    } else if (document.getElementById('triangle-waveform').checked) {
+        oscillator.type = 'triangle';
+    }
 
-   oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
-   const gainNode = audioContext.createGain();
-   gainNode.gain.setValueAtTime(amplitude, audioContext.currentTime);
-   gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime +1);
+    oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
 
-   oscillator.connect(gainNode);
-   gainNode.connect(audioContext.destination);
-   oscillator.start();
-  oscillator.stop(audioContext.currentTime + 1);
+    const gainNode = audioContext.createGain();
 
-   // Display frequency and amplitude values (optional)
-   frequencyInput.value = frequency;
-   amplitudeInput.value = amplitude;
+    // Slight attack time to avoid pops
+    gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+    gainNode.gain.linearRampToValueAtTime(amplitude, audioContext.currentTime + 0.02); // 20ms attack
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1.5);
 
-   audioSource = oscillator;
+    // Low-pass filter with some resonance
+    const filter = audioContext.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(1500, audioContext.currentTime); // Adjust as needed
+
+    oscillator.connect(filter);
+    filter.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + 1.5);
+
+    // Display frequency and amplitude values (optional)
+    frequencyInput.value = frequency;
+    amplitudeInput.value = amplitude;
+
+    // Store the oscillator and gainNode for future reference
+    audioSource = { oscillator: oscillator, gainNode: gainNode };
 }
+
 
 
     function drawOscilloscope(ctx, time) {
