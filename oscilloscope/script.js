@@ -22,7 +22,6 @@ const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const frequencySlider = document.getElementById('frequency-slider');
 
 
-// Function to play audio based on frequency and amplitude
 function playAudio() {
 const frequency = parseFloat(frequencySlider.value);
 const amplitude = parseFloat(amplitudeSlider.value);
@@ -40,7 +39,7 @@ oscillator.connect(audioContext.destination);
 oscillator.start();
 oscillator.stop(audioContext.currentTime + .5);
 
-// Display frequency and amplitude values (optional)
+// Display frequency and amplitude values
 document.getElementById('frequency-input').value = frequency;
 document.getElementById('amplitude-input').value = amplitude;
 }
@@ -49,13 +48,13 @@ document.getElementById('amplitude-input').value = amplitude;
     let a = 2;
     let b = 1;
     let p = 3;
-    let q = 7;
+    let q = 7; //default settings of torus knot
     const thetaMax = 2 * Math.PI;
     const numPoints = 1050;
     const thetaValues = Array.from({ length: numPoints }, (_, i) => (thetaMax * i) / numPoints);
 
     let angleX = 0.0;
-    let angleY = 0.0;
+    let angleY = 0.0; //overhead view
     const rotationSpeed = 0.2;
     const zoomFactor = .75; // Zoom out factor
 
@@ -177,7 +176,7 @@ window.addEventListener('keydown', (event) => {
         break;
         case 'q':
             frequencySlider.value = 65.41; // beginning of harmonic series
-            playAudio(); // To update sound immediately after changing frequency
+            playAudio();
             frequencyInput.value = frequencySlider.value; // Update displayed frequency value
             break;
         case 'w':
@@ -285,7 +284,7 @@ let audioSource = null;
 
 function playAudio() {
     if (audioSource) {
-        // Introduce a short release time for the currently playing sound
+        // short release time for the currently playing sound
         audioSource.gainNode.gain.setValueAtTime(audioSource.gainNode.gain.value, audioContext.currentTime);
         audioSource.gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.1); // 100ms release
         audioSource.oscillator.stop(audioContext.currentTime + 0.1);
@@ -306,12 +305,12 @@ function playAudio() {
 
     const gainNode = audioContext.createGain();
 
-    // Slight attack time to avoid pops
+    // attack time to avoid pops
     gainNode.gain.setValueAtTime(0, audioContext.currentTime);
     gainNode.gain.linearRampToValueAtTime(amplitude, audioContext.currentTime + 0.02); // 20ms attack
     gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1.5);
 
-    // Low-pass filter with some resonance
+    // low-pass filter with some resonance
     const filter = audioContext.createBiquadFilter();
     filter.type = 'lowpass';
     filter.frequency.setValueAtTime(1500, audioContext.currentTime); // Adjust as needed
@@ -323,7 +322,6 @@ function playAudio() {
     oscillator.start();
     oscillator.stop(audioContext.currentTime + 1.5);
 
-    // Display frequency and amplitude values (optional)
     frequencyInput.value = frequency;
     amplitudeInput.value = amplitude;
 
