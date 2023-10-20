@@ -7,10 +7,10 @@ const scalingSlider = document.getElementById('scaling');
 const shiftSlider = document.getElementById('shiftSlider');
 
 
-let offsetX = 0;  // New: for panning
-let offsetY = 0;  // New: for panning
-let isDragging = false;  // New: to track if dragging
-let zoom = .2;  // New: zoom factor
+let offsetX = 0;
+let offsetY = 0;
+let isDragging = false;
+let zoom = .2;
 
 canvas.addEventListener('mousedown', (e) => {
     isDragging = true;
@@ -117,7 +117,7 @@ function draw() {
 
             if (!enableRowShift) {
                 if (rowIndex % 2 === 0) {
-                    x += shiftAmount; // Apply shift for even rowIndex
+                    x += shiftAmount; Apply shift for even rowIndex
                 }
                 // No shift for odd rowIndex
             } else if (rowIndex % 2 === 0) {
