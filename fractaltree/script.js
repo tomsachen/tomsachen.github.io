@@ -117,7 +117,7 @@ function draw() {
 
             if (!enableRowShift) {
                 if (rowIndex % 2 === 0) {
-                    x += shiftAmount; Apply shift for even rowIndex
+                    x += shiftAmount; // Apply shift for even rowIndex
                 }
                 // No shift for odd rowIndex
             } else if (rowIndex % 2 === 0) {
