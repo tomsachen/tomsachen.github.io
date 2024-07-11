@@ -9,28 +9,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', Helvetica, sans-serif;
+            font-family: serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             background-color: #000000;
             color: #D3D3D3;
+   			position: relative;
         }
         h1 {
             text-align: center;
             color: #E0E0E0;
         }
-        details {
-            background-color: #000000;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
+
         summary {
             cursor: pointer;
             font-weight: bold;
             margin-bottom: 10px;
-            color: #666;
+            color: #E0E0E0;
         }
         ul {
             list-style-type: none;
@@ -44,11 +40,11 @@
         .track-name {
             width: 150px;
             font-weight: bold;
-            color: #666;
+            color: #E0E0E0;
         }
         audio {
             flex-grow: 1;
-            height: 30px;
+            height: 20px;
         }
         a {
             color: #ADD8E6;
@@ -57,14 +53,33 @@
         a:hover {
             text-decoration: underline;
         }
+        .left-image {
+    		position: fixed;
+    		left: 20px;
+    		top: 20px;
+    		width: 400px;
+    		height: auto;
+    		object-fit: cover;
+    		opacity: 0.3;
+    		z-index: -1;
+		}
+		.content {
+    		position: relative;
+    		z-index: 1;
+		}
     </style>
 </head>
 <body>
+
+	<img src="eyes.png" alt="eyes" class="left-image">
     
-    <p>Here is an archive of some music I have made. It is mostly noise.</p>
+    <div class="content">
+    <p>sachen:</small></p>
 
     <details>
         <summary>hops (2023)</summary>
+        <img src="hops/hops.png" width="250" alt="hops">
+     	~~~~~~~~~ for a willow tree: (japanese pull saw) --> moog + tape delay
         <ul>
             <li>
                 <span class="track-name">raincoat:</span>
@@ -182,11 +197,28 @@
                     Your browser does not support the audio element.
                 </audio>
             </li>
-            <li><a href="https://www.youtube.com/watch?v=5y2_W3G_AQc">here's that rainy day (bill evans)</a></li>
+            <li><a href="https://www.youtube.com/watch?v=5y2_W3G_AQc">here's that rainy day</a></li>
         </ul>
     </details>
 
-    <div class="ascii-art">
+
+    <p>shows:</p>
+    <ul class="performances">
+    	<li><small>august 8, 2024 @ wiggle room, milwaukee, wi</small></li>
+        <li><small><del>june 15, 2024 @ underhill and overhill, allston, ma</del></small></li>
+        <li><small><del>april 13, 2024 @ the lower level, cambridge, ma</del></small></li>
+        <li><small><del>september 15, 2023 @ promises, milwaukee, wi</del></small></li>
+        <li><small><del>may 27, 2023 @ terrace club, princeton, nj</del></small></li>
+        <li><small><del>march 16, 2023 @ terrace club, princeton, nj</del></small></li>
+        <li><small><del>december 12, 2022, live on wprb, princeton, nj </del></small></li>
+        <li><small><del>september 10, 2022 @ yardparties, princeton, nj</del></small></li>
+        <li><small><del>august 24, 2022, live on wprb, princeton, nj</del></small></li>
+        <li><small><del>october 1, 2021 @ wprb,princeton, nj</del></small></li>
+
+        
+    </ul>
+
+
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
     </div>
     
