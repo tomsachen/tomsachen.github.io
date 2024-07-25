@@ -32,7 +32,7 @@
 
         a {
             font-size: 16px;
-            color: blue;
+            color: green;
             text-decoration: underline;
         }
 
@@ -56,25 +56,43 @@
             height: 150px;
             border: none;
         }
+        .left-image {
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        width: 400px;
+        height: auto;
+        object-fit: cover;
+        opacity: 0.5;
+        z-index: -1;
+    }
+    .content {
+        position: relative;
+        z-index: 1;
+    }
     </style>
 </head>
 
 <body>
+
+    <img src="music/eyes.png" alt="eyes" class="left-image">
+
+    <div class="content">
     <h1>Thomas Sachen</h1>
 
     <p> tomsachen[at]gmail[dot]com</p>
-    <p> Wisconsin, USA</p>
+    <p> pisa, tuscany, italy</p>
 
     <hr>
 
     <h2><a href="assets/documents/tomsachen_resume-4.pdf">cv</a></h2>
 
     <details>
-        <summary>Mathematics Papers + Talks</summary>
+        <summary>papers + talks</summary>
+        <p><a href="assets/documents/MCMP-4.pdf">Assuaging Fears About Mathematical Diagrams</a></p>
         <p><a href="assets/documents/Arete_presentation-8.pdf">Geometric Techniques in Topological Data Analysis: Toward Persistent Hodge Theory</a></p>
         <p><a href="assets/documents/senior_thesis-10.pdf">p-adic Hodge Theory and derived-Hodge-to-de-Rham spectral sequences</a></p>
         <p><a href="assets/documents/jpmain.pdf">Classifying Brieskorn Varieties and Brieskorn Manifolds</a></p>
-        <p><a href="assets/documents/MCMP-4.pdf">Assuaging Fears About Mathematical Diagrams</a></p>
         <p><a href="https://arxiv.org/abs/2210.08055">Concordances of sums of alternating torus knots and their mirrors to L-space knots (with Dan Guyer)</a></p>
         <p><a href="assets/documents/diagrams.pdf">Generalizing Diagrams: Alternative Media and Mathematical Justification</a></p>
         <p><a href="assets/documents/jrsem.pdf">A Survey of Knot Concordance and L-space knots</a></p>
@@ -85,21 +103,21 @@
 
     <hr>
 
-    <p><strong>Research Interests:</strong> Geometry &times; Topology // Data (visual- &times; aural-)ization // Mathematics &times; Music Composition</p>
-    <p><strong>Other Interests:</strong> Philosophy of Mathematics, Russian Literature, Computational Design</p>
+    <p><strong>research interests:</strong> geometry &times; topology // epistemology &times; cognition // proof theory &times; formal logic</p>
+    <p><strong>other interests:</strong> russian literature, computational design, music composition</p>
 
     <hr>
 
-    <h2>Other Projects</h2>
-    <a href="oscilloscope/oscilloscope.html"><img src="assets/imgs/torosc_thumb.png" alt="Toroscillator"></a>
+    <p>
+    <details>
+      <summary>other projects</summary>
+          <a href="oscilloscope/oscilloscope.html"><img src="assets/imgs/torosc_thumb.png" alt="Toroscillator"></a>
     <p><strong>toroscillator</strong>: A 4D toric oscilloscope. See <a href="assets/documents/jrsem.pdf">here</a> and <a href="https://arxiv.org/abs/2210.08055">here</a> for some of my work on torus knots, and <a href="torusknot.html">here</a> for a simpler torus knot visualization tool.</p>
 
     <a href="fractaltree/fractaltree.html"><img src="assets/imgs/fractalforest.png" alt="Fractal Forest"></a>
-    <p><strong>fractal Forest</strong>: An interactive visualization of the beautiful and surprising relation between Sierpinski sieves and fractal trees.</p>
-
-    <hr>
-
-    <h2><a href="mussic/music.html">music</a></h2>
+    <p><strong>fractal forest</strong>: An interactive visualization of the beautiful and surprising relation between Sierpinski sieves and fractal trees.</p>
+    </details> 
+    </p>
 
     <details>
         <summary>radio programs</summary>
@@ -113,6 +131,8 @@
         <p>December 29, 2022</p>
         <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1634258991&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
     </details>
+
+        <h2><a href="music/music.html">music</a></h2>
 </body>
 </div>  
 
