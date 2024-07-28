@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thomas Sachen</title>
+    <title>Tom Sachen</title>
+    <link rel="icon" type="image/png" href="music/eyes.png">
     <style>
         @font-face {
             font-family: 'Favorit_Medium';
@@ -17,9 +18,9 @@
             font-family: 'Favorit_Medium', 'Roboto', Helvetica, sans-serif;
             font-size: 25px;
             background-color: #ffffff;
-            color: black;
+            color: #2e3b27;
             margin: 20px;
-            max-width: 950px;
+            max-width: 1000px;
             margin: 20px auto;
             position: relative;
             overflow-x: hidden;
@@ -46,7 +47,7 @@
         }
 
         hr {
-            border: 1px solid black;
+            border: 1px solid #6d7d65;
         }
 
         details {
@@ -54,7 +55,7 @@
         }
 
         details summary {
-            font-weight: bold;
+            
             font-size: 20px;
             list-style: none;
             cursor: pointer;
@@ -73,7 +74,7 @@
             position: absolute;
             left: 0;
             top: 50%;
-            width: 1.25em;
+            width: 1.1em;
             height: 2px;
             background-color: black;
         }
@@ -183,8 +184,8 @@
 
         <hr>
 
-        <p><strong>research interests:</strong> geometry &times; topology // epistemology &times; cognition // proof theory &times; formal logic</p>
-        <p><strong>other interests:</strong> russian literature, computational design, music composition</p>
+        <p>research interests: geometry &times; topology // epistemology &times; cognition // proof theory &times; mathematical logic</p>
+        <p>other interests: russian literature, music composition</p>
 
         <hr>
 
@@ -245,19 +246,17 @@
 
         function createRandomImages() {
             const container = document.getElementById('background-container');
-            const numImages = Math.floor(Math.random() * 2) + 3; // 3 to 4 images
+            const numImages = Math.floor(Math.random() * 2) + 3;
 
             for (let i = 0; i < numImages; i++) {
                 const img = document.createElement('img');
                 img.src = getRandomImage();
                 img.className = 'background-image';
-
-                // Random size between 200px and 400px
+                
                 const size = Math.floor(Math.random() * 201) + 200;
                 img.style.width = `${size}px`;
                 img.style.height = `${size}px`;
 
-                // Random position
                 const maxX = window.innerWidth - size;
                 const maxY = document.body.scrollHeight - size;
                 const x = Math.floor(Math.random() * maxX);
