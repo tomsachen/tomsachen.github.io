@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoTTDoG</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <style>
+        @font-face {
+            font-family: 'Favorit_Medium';
+            src: url('../fonts/Favorit_Medium.woff.ttf') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        body {
+            font-family:'Roboto', Helvetica, sans-serif;
+            font-size: 14px;
+            background-color: #ffffff;
+            color: #2e3b27;
+            margin: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 14px;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 20px 0;
+        }
+
+        a {
+            font-size: 14px;
+            color: green;
+            text-decoration: underline;
+        }
+
+        hr {
+            border: 1px solid #6d7d65;
+        }
+
+        details {
+            margin-bottom: 1em;
+        }
+
+        details summary {
+            
+            font-size: 14px;
+            list-style: none;
+            cursor: pointer;
+            position: relative;
+            padding-left: 1.5em;
+            margin-bottom: 0.5em;
+            user-select: none;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details summary::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 1.1em;
+            height: 2px;
+            background-color: black;
+        }
+
+        details summary::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: black;
+        }
+
+        details[open] > summary::after {
+            bottom: auto;
+            height: 100%;
+        }
+
+        details > ul {
+            margin-left: 0;
+            padding-left: 1.5em;
+            list-style-type: none;
+            position: relative;
+        }
+
+        details[open] > ul::before {
+            content: "";
+            position: absolute;
+            left: .4em;
+            top: -1.5em;
+            bottom: 0.7em;
+            width: 2px;
+            background-color: black;
+        }
+
+        details > ul > li {
+            position: relative;
+            padding-left: 1em;
+            margin-bottom: 1em;
+        }
+
+        details > ul > li::before {
+            content: "";
+            position: absolute;
+            top: 0.7em;
+            left: -1.1em;
+            width: 1.25em;
+            height: 2px;
+            background-color: black;
+        }
+
+        img {
+            height: auto;
+            max-width: 60%; 
+            display: block; 
+        }
+
+        iframe {
+            width: 100%;
+            height: 150px;
+            border: none;
+        }
+
+        .background-image {
+            position: fixed;
+            opacity: 0.5;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        .green-text {
+            color: green;
+        }
+
+        table, th, td {
+        border: 1px solid green;
+        border-collapse: collapse;
+        padding: 10px;
+}
+    </style>
+</head>
+
+<body>
+    <div id="background-container"></div>
+
+    <div class="content">
+
+        <h1><small>Welcome to</small> <span class="green-text"><strong>HoTTDoG</strong></span> <small>(<span class="green-text">Ho</span>motopy <span class="green-text">T</span>ype <span class="green-text">T</span>heory <span class="green-text">D</span>isc<span class="green-text">o</span>very <span class="green-text">G</span>roup)</small></h1>
+
+        <p>This is a reading group for homotopy type theory (HoTT), univalent foundations, higher category theory, and related topics. HoTT is a burgeoning area of research that combines ideas from topology, mathematical logic, and category theory to furnish a new theoretical basis for mathematics, as a preferable alternative to set-theoretic foundations.</p>
+
+        <p>The ideas developed therein are of great interest in mathematics, theoretical computer science, and philosophy. Anyone with an interest in any of these fields will likely appreciate one or another aspect of the theory; already, the results and techniques formulated in HoTT are deep, far-reaching, and beautiful.</p>
+
+        <p><span class="green-text" style="font-weight:bold;">HoTTDoG</span> is first and foremost a learning group and community for researchers in adjacent fields, as well as early-career researchers and students, that wish to gain familiarity with this subject. Many of the existing resources can be intimidating at first blush for non-specialists; the aim of <span class="green-text" style="font-weight:bold;">HoTTDoG</span> is to provide a gentler, more accessible introduction.</p>
+
+        <p>Discussion and communications will take place on the <a href="https://discord.gg/S929Xse5">HoTTDoG Discord server</a> — please join!</p>
+
+        <p>Otherwise, you can contact me at <code>tomsachen@gmail.com</code>.</p>
+
+        <hr>
+
+        <h1>The first reading is <span class="green-text"><em>Homotopy Type Theory: Univalent Foundations of Mathematics</em></span> (2013). <small>It can be found <a href="https://homotopytypetheory.org/book/">here</a>.</small> </h1>
+
+        <p>Suggested prerequisites are familiarity with basic logic and topology at an advanced undergraduate or early graduate level. </p>
+
+        <p>Subsequent readings will further develop </p>
+
+        <hr>
+
+        There are several <span class="green-text", font-weight="bold">blogs and online resources</span> dedicated to HoTT and adjacent subjects. Here are a few helpful links to get started.
+
+        <ul>
+
+        <li><p><a href="https://homotopytypetheory.org/"> HomotopyTypeTheory.org</a> is the best resource on the Univalent Foundations program, regularly updated with news and resources.</p></li>
+        <li><p><a href="https://ncatlab.org/nlab/show/homotopy+type+theory">nLab</a> has a detailed entry on HoTT, with a <a href="https://ncatlab.org/nlab/show/homotopy+type+theory+-+references">taxonomized listing of papers.</a></p></li>
+        <li><p><a href="https://golem.ph.utexas.edu/category/">The n-Category Cafe</a> is a great blog on higher category theory and related topics.</p></li>
+        <li><p><a href="https://math.andrej.com">Andrej Bauer's blog</a> is another great resource, with a view toward computation.</p></li>
+        <li><p>There is a (quite active) <a href="https://hott.zulipchat.com/">HoTT Zulip server</a>, where discussions relating to HoTT research take place. </p></li>
+        </ul>
+
+        <hr>
+
+
+        <h1>The first session will begin once a quorum is reached, and is expected to last around 12 weeks.</h1>
+
+        <p>There will be weekly sessions on the <a href="https://discord.gg/S929Xse5">HoTTDoG Discord server</a>, where members are welcome to chat, discuss readings, go over exercises, etc. Please feel welcome to join from anywhere, and with any background! All readings/activities are of course optional; feel free to participate as actively (or not) as you wish, according to your circumstances.</p>
+        <p>Here is a provisional syllabus, roughly following the book. This will be updated with more/fewer auxiliary readings, according to the pace of the group. Readings are listed <span class="green-text">in green</span>, in ~descending order of relevance. Links to auxiliary readings will be distributed on the <a href="https://discord.gg/S929Xse5">Discord</a>.</p>
+
+        <table>
+          <tr>
+            <td>week 1</td>
+            <td>Introduction and motivation</td>
+            <td>An introduction to Type theories, with a view toward motivation and application. Historical background and prerequisites will also be discussed.
+            <span class="green-text"><ul>
+               <li><em>HoTT</em> ch. 0: Introduction</li>
+               <li><em>Spartan Type Theory</em> (Andrej Bauer, 2019)</li>
+            </ul></span>
+            </td>
+          </tr>            
+          <tr>
+            <td>week 2</td>
+            <td>Type theory</td>
+            <td><em>"Homotopy type theory is (among other things) a foundational language for mathematics, i.e., an alternative to Zermelo–Fraenkel set theory. However, it behaves differently from set theory in several important ways, and that can take some getting used to."</em>
+            <span class="green-text"><ul>
+               <li><em>HoTT</em> ch. 1: Type theory</li>
+            </ul>
+            </span>
+        </td>
+          </tr>
+          <tr>
+            <td>week 3</td>
+            <td>Homotopy type theory</td>
+            <td><em>"The central new idea in homotopy type theory is that types can be regarded as spaces in homotopy theory, or higher-dimensional groupoids in category theory."</em>
+            <span class="green-text"><ul>
+               <li><em>HoTT</em> ch. 2: Homotopy type theory</li>
+            </ul>
+            </span>
+        </td>
+          </tr>
+          <tr>
+            <td>week 4</td>
+            <td>Sets and logic</td>
+            <td><em>"[W]hen writing mathematics informally in natural language, we generally use familiar words, particularly logical connectives such as “and” and “or”, and logical quantifiers such as “for all” and “there exists”. In contrast to set theory, type theory offers us more than one way to regard these English phrases as operations on types. This potential ambiguity needs to be resolved, by setting out local or global conventions, by introducing new annotations to informal mathematics, or both. This requires some getting used to, but is offset by the fact that because type theory permits this finer analysis of logic, we can represent mathematics more faithfully, with fewer “abuses of language” than in set-theoretic foundations."</em>
+            <span class="green-text"><ul>
+               <li><em>HoTT</em> ch. 3: Sets and Logic</li>
+            </ul>
+            </span>
+            </td>
+          </tr>
+          <tr>
+            <td>week 5</td>
+            <td>Equivalences</td>
+            <td><em>"We now study in more detail the notion of equivalence of types that was introduced briefly in [Chapter 2]. Specifically, we will give several different ways to define a type isequiv(f) having the properties mentioned there."</em>
+            <span class="green-text"><ul>
+               <li><em>HoTT</em> ch. 4: Equivalences</li>
+            </ul>
+            </span>
+            </td>
+          </tr>
+          <tr>
+            <td>week 6</td>
+            <td>Induction</td>
+            <td><em>"In Chapter 1, we introduced many ways to form new types from old ones. Except for (dependent) function types and universes, all these rules are special cases of the general notion of inductive definition. In this chapter we study inductive definitions more generally."</em>
+            <span class="green-text"><ul>
+               <li><em>HoTT</em> ch. 5: Induction</li>
+            </ul>
+            </span>
+            </td>
+          </tr>
+          <tr>
+            <td>week 7</td>
+            <td>Higher inductive types</td>
+            <td><em>"Like the general inductive types we discussed in Chapter 5, higher inductive types are a general schema for defining new types generated by some constructors. But unlike ordinary inductive types, in defining a higher inductive type we may have “constructors” which generate not only points of that type, but also paths and higher paths in that type."</em>
+            <span class="green-text"><ul>
+               <li><em>HoTT</em> ch. 6: Higher Inductive Types</li>
+            </ul>
+            </span>
+            </td>
+          </tr> 
+          <tr>
+            <td>week 8</td>
+            <td>Homotopy n-types</td>
+            <td><em>"One of the basic notions of homotopy theory is that of a homotopy n-type: a space containing no interesting homotopy above dimension n...our first goal in this chapter is to give it a precise definition in homotopy type theory."</em>
+            <span class="green-text"><ul>
+               <li><em>HoTT</em> ch. 7: Homotopy n-types</li>
+            </ul>
+            </span>
+            </td>
+          </tr>
+          <tr>
+            <td>week 9</td>
+            <td>Homotopy theory</td>
+            <td><em>"In this chapter, we develop some homotopy theory within type theory. We use the synthetic approach to homotopy theory introduced in Chapter 2: Spaces, points, paths, and homotopies are basic notions, which are represented by types and elements of types, particularly the identity type. The algebraic structure of paths and homotopies is represented by the natural ∞-groupoid structure on types, which is generated by the rules for the identity type. Using higher inductive types, as introduced in Chapter 6, we can describe spaces directly by their universal properties."</em>
+            <span class="green-text"><ul>
+               <li><em>HoTT</em> ch. 8: Homotopy theory</li>
+            </ul>
+            </span>
+            </td>
+          </tr>
+          <tr>
+            <td>week 10</td>
+            <td>Category theory</td>
+            <td><em>"Of the branches of mathematics, category theory is one which perhaps fits the least comfortably in set theoretic foundations. One problem is that most of category theory is invariant under weaker notions of “sameness” than equality, such as isomorphism in a category or equivalence of categories, in a way which set theory fails to capture. But this is the same sort of problem that the univalence axiom solves for types, by identifying equality with equivalence. Thus, in univalent foundations it makes sense to consider a notion of “category” in which equality of objects is identified with isomorphism in a similar way."</em>
+            <span class="green-text"><ul>
+               <li><em>HoTT</em> ch. 9: Category theory</li>
+            </ul>
+            </span>
+            </td>
+          </tr>
+          <tr>
+            <td>week 11</td>
+            <td>Set theory</td>
+            <td><em>"Our conception of sets as types with particularly simple homotopical character, cf. [Chapter 3], is quite different from the sets of Zermelo–Fraenkel set theory, which form a cumulative hierarchy with an intricate nested membership structure. For many mathematical purposes, the homotopy-theoretic sets are just as good as the Zermelo–Fraenkel ones, but there are important differences."</em>
+            <span class="green-text"><ul>
+               <li><em>HoTT</em> ch. 10: Set theory</li>
+            </ul>
+            </span>
+            </td>
+          </tr>
+          <tr>
+            <td>week 12</td>
+            <td>Real numbers</td>
+            <td><em>"The development of real numbers and analysis in homotopy type theory can be easily made compatible with classical mathematics. By assuming excluded middle and the axiom of choice we get standard classical analysis: the Dedekind and Cauchy reals coincide, foundational questions about the impredicative nature of the Dedekind reals disappear, and the interval is as compact as it could be.</em>
+            <span class="green-text"><ul>
+               <li><em>HoTT</em> ch. 11: Real Numbers</li>
+            </ul>
+            </span>
+            </td>
+          </tr>
+          <tr>
+            <td>week 13</td>
+            <td>Discussion and further directions.</td>
+            <td>TBD</td>
+          </tr>                                       
+        </table>
+
+        <hr>
+
+    </div>
+</body>
+</html>
