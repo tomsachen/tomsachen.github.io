@@ -1,139 +1,129 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-  <title>Tom Sachen</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tom Sachen - Blog</title>
+
+  <!-- Existing styles from your site -->
   <style type="text/css">
-    @font-face{
-    font-family: luxiMono;
-    src: url('fonts/luximr.ttf');
-  font-weight: normal;
-  font-display: swap;
+    body {
+      margin: 50px auto;
+      max-width: 650px;
+      line-height: 1.4;
+      font-size: 17px;
+      background: #ffffff;
+      color: black;
+      padding: 0 10px;
     }
-    @font-face{
-  font-family: luxiMono;
-  src: url('fonts/luximb.ttf');
-  font-weight: bold;
-  font-display: swap;
+
+    h1,
+    h2,
+    h3 {
+      line-height: 0.7;
     }
-    @font-face{
-  font-family: luxiMono;
-  src: url('fonts/luximri.ttf');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
+
+    img {
+      border: 2px dashed blue;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
     }
-    @font-face{
-  font-family: luxiMono;
-  src: url('fonts/luximbi.ttf');
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
+
+    a,
+    a:active,
+    a:visited {
+      color: blue;
+      text-decoration: none;
+      font-weight: bold;
     }
-    body{
-  margin:50px auto;
-  max-width:650px;
-  line-height:1.4;
-  font-size:14px;
-  background:#ffffff;
-        color:black;
-  padding:0 10px;
-  font-family: luxiMono;
+
+    figure {
+      margin: 20px 0;
+      text-align: center;
     }
-    h1,h2,h3{
-  line-height:0.7
+
+    figure img {
+      max-width: 100%;
+      height: auto;
     }
-    img{
-    border:2px dashed blue;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
+
+    figure figcaption {
+      font-size: 0.9em;
+      color: #555;
     }
-    a,a:active,a:visited{
-  color:blue;
-  text-decoration:none;
-  font-weight: bold;
+
+    .latex {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+
+    header h2 {
+      text-align: center;
+      color: blue;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #555;
     }
   </style>
-  
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⊢</text></svg>">
+
+  <!-- MathJax for LaTeX rendering -->
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 <body>
 
-<h2 style="text-align: center; color: blue;"><i>Tom Sachen</i></h2>
-
-<div>
-  <img src="assets/imgs/duotone_eyes.jpg"vertical-align="middle">
-</div>
-
-<br>
-
-<div>
-  I study (the philosophy of) math at <i>Scuola Normale Superiore di Pisa</i>. I aim to understand the interaction between<br>
- <p style="text-align: center; color: blue;"><i>{Hilbert's 24th problem, homotopy type theory, categorical logic}</i> </p>
- <p style="text-align: center; font-size: 12px;">and</p>
- <p style="text-align: center; color: blue;"><i>{epistemology & cognition in mathematical practice}.</i></p>
- <hr>
-  You might also be interested in my: <a href="assets/documents/currentCV-3.pdf" target="_blank">[cv]</a> <a href="https://tomsachen.wordpress.com" target="_blank">[blog]</a> <a href="music/music.html" target="_blank">[music]</a> <a href="HoTTDoG/HoTTDoG.html" target="_blank">[HoTTDoG]</a>.<br>
-  You can reach me at <b>[tom]+[surname]+[@gmail.com]</b>.
-</div>
-
-<br>
-
-<div>
-  <h2>[papers]</h2>
+  <header>
+    <h2><i>Tom Sachen</i></h2>
+  </header>
 
   <div>
-    <b>> <i>Concordances of sums of alternating torus knots and their mirrors to L-space knots </i> (2024) <a href="https://arxiv.org/abs/2210.08055" target="_blank">[arXiv]</a></b><br>
-    <i><small>w/ Dan Guyer; to appear in <strong>Journal of Knot Theory and its Ramifications. </strong></i></small><br>
+    <img style="width: 20%;" src="assets/imgs/duotone_eyes.jpg" alt="Profile image">
   </div>
 
-<br>
-
+  <br>
 
   <div>
-    <b>> <i>Toward persistent Hodge theory in Geometric Data Analysis</i> (2023) <a href="assets/documents/Arete_presentation-8.pdf" target="_blank">[pdf]</a></b><br>
+    <article>
+      <h2>First Blog Post</h2>
+      <p>Welcome to my blog! This is a static blog page hosted on GitHub Pages using simple HTML, CSS, and JavaScript. The design is consistent with my main webpage.</p>
+
+      <figure>
+        <img src="path_to_your_image.jpg" alt="Example figure">
+        <figcaption>An example figure with a caption.</figcaption>
+      </figure>
+
+      <h3>LaTeX Example</h3>
+      <p>Here is an example of LaTeX being rendered using MathJax:</p>
+      <div class="latex">
+        $$E = mc^2$$
+      </div>
+
+      <h3>Second Blog Post</h3>
+      <p>Here is another example with a figure and LaTeX:</p>
+
+      <figure>
+        <img src="path_to_another_image.jpg" alt="Another figure">
+        <figcaption>Another figure with its own caption.</figcaption>
+      </figure>
+
+      <div class="latex">
+        $$\int_0^\infty e^{-x} dx = 1$$
+      </div>
+    </article>
   </div>
-
-<br>
-
-  <div>
-    <b>> <i>p-adic Hodge Theory & derived spectral sequences</i> (2023)<a href="assets/documents/senior_thesis-10.pdf" target="_blank"> [pdf]</a></b><br>
-    <i><small>Princeton senior thesis, advised by Bhargav Bhatt.</small></i>
-  </div>
-
-<br>
-
-  <div>
-    <b>> <i>Classifying Brieskorn varieties and Brieskorn manifolds</i> (2022)<a href="assets/documents/jpmain.pdf" target="_blank"> [pdf]</a></b><br>
-    <i><small>Princeton junior thesis, advised by Chenyang Xu.</small></i>
-  </div>
-
-<br>
-
-  <div>
-    <b>> <i>A Survey of Knot Concordance and L-space knots</i> (2021)<a href="assets/documents/jrsem.pdf" target="_blank"> [pdf]</a></b><br>
-  </div>
-
-<br>
-
-  <div>
-    <b>> <i>Geometric Aspects of Growth of Finitely Generated Groups</i> (2021)<a href="https://youtu.be/MenqpfXeHLw" target="_blank"> [video]</a></b><br>
-    <i><small>Talk at UConn Vir(tu)al Conference 2021</small></i>
-  </div>
-
-<br>
-
-<div>
-  <h2>[other]</h2>
-  <p>> <a href="oscilloscope/oscilloscope.html" target="_blank"><strong>toroscillator</strong></a>
-  : A 4D toric oscilloscope. <small>And see <a href="torusknot.html">here</a> for a simpler torus knot visualization tool.</small></p>
-  <p>> <a href="fractaltree/fractaltree.html"><strong>fractal forest</strong></a>
-  : An interactive visualization of the relationship between Sierpinski sieves and fractal trees.</p>
-</div>
 
 </body>
+
 </html>
